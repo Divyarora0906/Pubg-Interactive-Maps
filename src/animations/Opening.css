@@ -1,0 +1,40 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body, html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.Full_Container{
+    height: 100vh;
+    background-color: black;
+    width: 100%;
+    z-index: 99;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 500px;
+    animation: Movement 1.4s ease-in-out forwards;
+
+}
+.Top, .Bottom{
+    height: 50vh;
+    width: 100%;
+    background-color: whitesmoke;
+}
+@keyframes Movement {
+    0%{
+        gap: 50px;
+    background-color: black;
+        
+    }
+    100%{
+        gap: 750px;
+    background-color: rgba(0, 0, 0, 0);
+        z-index: -1;
+    }
+}
