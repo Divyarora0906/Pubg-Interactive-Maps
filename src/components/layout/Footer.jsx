@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer class="footer">
+    <footer className="footer">
       <p>
         © <span id="year"></span> PUBGI MAPS. All rights reserved.
       </p>

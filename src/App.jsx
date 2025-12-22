@@ -5,13 +5,15 @@ import {Snowfall} from "react-snowfall"
 import Opening from './animations/Opening'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
+import IGL from './components/layout/IGL'
 const App = () => {
   return (
     <>
     <Opening />
-     <Snowfall snowflakeCount={200}/>
+     {/* <Snowfall snowflakeCount={200}/>
      <Header />
-     <HeroSection />
+     <HeroSection /> */}
+     <IGL />
      <Footer />
     </>
   )

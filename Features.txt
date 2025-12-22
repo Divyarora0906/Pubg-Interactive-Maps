@@ -1,0 +1,14 @@
+//Pins for 
+Vechiles - Garage
+Boats
+Vechiles Esports
+Show All
+Hide ALL
+Grid Hide
+
+
+
+//vikendi 6*6 km
+//Rondo 8*8km
+Shanok 4*4 km
+Miramar 8*8km
