@@ -1,0 +1,87 @@
+.igl-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background: #0b0b0b;
+  overflow: hidden;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.igl-sidebar {
+  width: 280px;
+  background: #000;
+  color: #fff;
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #1f1f1f;
+  z-index: 1000;
+}
+
+.igl-title {
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+  color: #eaeaea;
+  font-weight: 600;
+}
+.igl-btn {
+  background: #111;
+  color: #ddd;
+  border: 1px solid #2a2a2a;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+.igl-btn:hover {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.igl-btn.active {
+  background: #1e90ff;
+  border-color: #1e90ff;
+  color: #fff;
+  box-shadow: 0 0 8px rgba(30, 144, 255, 0.6);
+}
+
+.igl-divider {
+  height: 1px;
+  background: #222;
+  margin: 12px 0;
+}
+.igl-btn.new-game {
+  background: #fdd90e;
+  border: none;
+  color: #000000;
+  margin-top: auto; 
+  font-weight: 600;
+}
+
+.igl-btn.new-game:hover {
+  background: #fafa44;
+  box-shadow: 0 0 10px rgba(176, 0, 32, 0.6);
+}
+
+.igl-map {
+  flex: 1;
+  position: relative;
+}
+
+.leaflet-container {
+  background: #000;
+}
+.igl-sidebar,
+.igl-btn {
+  user-select: none;
+}
+#logo{
+    height: 150px;
+    width: 150px;
+    display: block;
+    margin: auto;
+}
