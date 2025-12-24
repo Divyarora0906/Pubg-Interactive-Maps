@@ -99,6 +99,10 @@ font-weight: 700;
 p{
   color: white;
   text-align: center;
+  z-index: 999;
+  position: absolute;
+  left: 50%;
+  
 }
 .BtnGo{
   position: relative;
