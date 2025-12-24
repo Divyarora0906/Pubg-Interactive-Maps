@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <p>
-        © <span id="year"></span> PUBGI MAPS. All rights reserved.
+        © <span id="year"></span> PUBG COMPETITIVE MAPS. All rights reserved.
       </p>
     </footer>
   );

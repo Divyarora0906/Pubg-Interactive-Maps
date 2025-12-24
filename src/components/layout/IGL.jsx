@@ -3,6 +3,10 @@ import Map from "../Map";
 import "../css/IGL.css";
 import logo from "../../assets/images/logo.png";
 
+// 🎯 icons
+import { MdGpsFixed } from "react-icons/md";
+import { FiRefreshCcw } from "react-icons/fi";
+
 const IGL = () => {
   const [activePhase, setActivePhase] = useState(1);
   const [gameSeed, setGameSeed] = useState(0);
@@ -18,6 +22,10 @@ const IGL = () => {
             className={`igl-btn ${activePhase === num ? "active" : ""}`}
             onClick={() => setActivePhase(num)}
           >
+            <MdGpsFixed
+              size={16}
+              style={{ marginRight: "8px", opacity: 0.9 }}
+            />
             Circle {num}
           </button>
         ))}
@@ -31,6 +39,10 @@ const IGL = () => {
             setGameSeed((p) => p + 1);
           }}
         >
+          <FiRefreshCcw
+            size={16}
+            style={{ marginRight: "8px" }}
+          />
           New Game
         </button>
       </aside>

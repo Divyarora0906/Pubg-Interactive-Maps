@@ -94,7 +94,7 @@ const generateZones = (planeStart, planeEnd) => {
 
   zones.push({ center, radius });
 
-  const shrinkRatios = [0.55, 0.60, 0.60, 0.65, 0.65, 0.65, 0.70];
+  const shrinkRatios = [0.70, 0.60, 0.60, 0.65, 0.65, 0.65, 0.70];
 
   for (const shrink of shrinkRatios) {
     const prevRadius = radius;
@@ -134,12 +134,13 @@ const Map = ({ activePhase = 1, gameSeed = 0 }) => {
     setZones(generateZones(start, end));
   }, [gameSeed]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setDashOffset((d) => String((parseInt(d, 10) + 6) % 120));
-    }, 50);
-    return () => clearInterval(interval);
-  }, []);
+useEffect(() => {
+  const interval = setInterval(() => {
+    setDashOffset((d) => String((parseInt(d, 10) - 6 + 120) % 120));
+  }, 50);
+  return () => clearInterval(interval);
+}, []);
+
 
   return (
     <MapContainer
