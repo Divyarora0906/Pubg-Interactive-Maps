@@ -1,8 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import Maps from "../../public/Map.jpeg";
-
 import {
   MapContainer,
   ImageOverlay,
@@ -13,8 +11,6 @@ import {
   Tooltip,
   useMapEvents,
 } from "react-leaflet";
-
-// ---------- FIX DEFAULT MARKER ----------
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl:
@@ -22,8 +18,6 @@ L.Icon.Default.mergeOptions({
   iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
   shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
 });
-
-// ---------- MAP CONSTANTS ----------
 const MAP_SIZE = 4096;
 const CENTER = MAP_SIZE / 2;
 const VALID_RADIUS = 0.9 * CENTER;
@@ -77,13 +71,10 @@ const generateZones = () => {
   return zones;
 };
 
-// ---------- PIN ADDER (WITH BOUNDS CHECK) ----------
 function AddPins({ markers, setMarkers }) {
   useMapEvents({
     click(e) {
       const { lat, lng } = e.latlng;
-
-      // ⭐ BLOCK OUTSIDE MAP CLICKS
       if (lat < 0 || lat > MAP_SIZE || lng < 0 || lng > MAP_SIZE) return;
 
       if (markers.length >= 4) return;
@@ -99,8 +90,8 @@ function AddPins({ markers, setMarkers }) {
   return null;
 }
 
-// ---------- MAIN MAP ----------
-const Map = ({ activePhase = 1, gameSeed = 0 }) => {
+const Map = ({ activePhase = 1, gameSeed = 0 , img}) => {
+
   const bounds = [
     [0, 0],
     [MAP_SIZE, MAP_SIZE],
@@ -140,14 +131,12 @@ const Map = ({ activePhase = 1, gameSeed = 0 }) => {
     }
   }, [markers, loaded]);
 
-  // ---------- GENERATE PLANE + ZONES ----------
   useEffect(() => {
     const { start, end } = generateFlightPath();
     setFlightPath([start, end]);
     setZones(generateZones());
   }, [gameSeed]);
 
-  // ---------- ANIMATE PATH ----------
   useEffect(() => {
     const interval = setInterval(() => {
       setDashOffset((d) => String((parseInt(d, 10) - 6 + 120) % 120));
@@ -205,7 +194,7 @@ const Map = ({ activePhase = 1, gameSeed = 0 }) => {
           maxBounds={bounds}
           maxBoundsViscosity={1}
         >
-          <ImageOverlay url={Maps} bounds={bounds} crossOrigin="anonymous" />
+          <ImageOverlay url={img} bounds={bounds} crossOrigin="anonymous" />
 
           <AddPins markers={markers} setMarkers={setMarkers} />
 
