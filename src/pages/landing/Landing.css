@@ -100,8 +100,6 @@ p{
   color: white;
   text-align: center;
   z-index: 999;
-  position: absolute;
-  left: 50%;
   
 }
 .BtnGo{
@@ -136,4 +134,10 @@ p{
 .footer p {
   margin: 0;
 }
-
+#ComingSoon{
+  height: 100vh;
+  background-color: black;
+  text-align: center;
+  color:white;
+  padding-top: 200px;
+}

@@ -2,12 +2,10 @@ import React, { useState } from "react";
 import Map from "../Map";
 import "../css/IGL.css";
 import logo from "../../assets/images/logo.png";
-
-// 🎯 icons
 import { MdGpsFixed } from "react-icons/md";
 import { FiRefreshCcw } from "react-icons/fi";
 
-const IGL = () => {
+const IGL = (props) => {
   const [activePhase, setActivePhase] = useState(1);
   const [gameSeed, setGameSeed] = useState(0);
 
@@ -48,7 +46,7 @@ const IGL = () => {
       </aside>
 
       <main className="igl-map">
-        <Map activePhase={activePhase} gameSeed={gameSeed} />
+        <Map activePhase={activePhase} gameSeed={gameSeed} img={props.img}/>
       </main>
     </div>
   );

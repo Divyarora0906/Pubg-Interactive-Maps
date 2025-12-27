@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Landing.css";
 import { useRef } from "react";
 import OpenModal from "../../components/ui/OpenModal";
+import Snowfall from "react-snowfall";
 
 const HeroSection = () => {
   const [Open, SetOpen] = useState(false);
@@ -20,6 +21,7 @@ const HeroSection = () => {
   };
   return (
     <>
+      <Snowfall snowflakeCount={200} />
       <div className="Hero_Container" onMouseMove={handleMouseMove}>
         <h3>Every Zone. Every Angle. Battle-Ready Maps.</h3>
         <p>
